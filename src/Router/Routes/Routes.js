@@ -10,6 +10,13 @@ import Home from "../../Pages/Home/Home";
         {
           path:'/',
           element:<Home></Home>
+        },{
+          path:'/login',
+          element:<h2>Please Login</h2>
+        },
+        {
+          path:'/Register',
+          element: <h2>please register</h2>
         }
       ]
     }
