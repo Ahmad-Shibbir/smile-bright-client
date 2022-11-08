@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelopeOpen } from "react-icons/fa";
 
 const Home = () => {
+    const [Services, setServices] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/home')
+            .then(res => res.json())
+            .then(data => setServices(data))
+    })
     return (
         <div>
-           
+
             <div className="hero min-h-screen bg-base-200 ">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src="https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=640:*" className="max-w-sm rounded-lg shadow-2xl" />
@@ -15,10 +22,35 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+
+            
             <div>
-                <h2 className='text-center text-2xl  text-bold'>MY SERVICES</h2>
-                <button className="btn btn-primary">SEE ALL</button>
+                <h2 className="footer-title border-b-4 border-indigo-500" ></h2>
+                <h2 className='text-center text-2xl  text-bold '>MY SERVICES</h2>
+
+
+
+
+                <div className='grid grid-cols-3'>
+                    {
+                        Services.map(s =>
+                            <div className="card w-96 glass">
+                                <figure><img src={s.img} alt="car!" /></figure>
+                                <div className="card-body">
+                                    <h2 className="card-title">{s.Services}</h2>
+                                    <p>{s.description.slice(0, 200)}</p>
+                                    <div className="card-actions justify-end">
+                                        <button className="btn btn-primary">Know More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    }
+                </div>
+                <button className=" btn btn-primary">SEE ALL</button>
+                <h2 className="footer-title border-b-4 border-indigo-500" ></h2>
             </div>
+
 
             <footer className="footer p-10 bg-neutral text-neutral-content text-2xl">
                 <div>
@@ -36,7 +68,7 @@ const Home = () => {
                 </div>
             </footer>
 
-    
+
         </div>
     );
 };

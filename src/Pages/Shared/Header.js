@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaTooth } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
@@ -15,9 +16,10 @@ const Header = () => {
 
 
                 <div>
-                    <button className="btn btn-ghost">Home</button>
-                    <button className="btn btn-ghost">Service</button>
-                    <button className="btn btn-ghost">Blog</button>
+                    <Link to='/'><button className="btn btn-ghost">Home</button></Link>
+                    <Link to='services'><button className="btn btn-ghost">Service</button></Link>
+                    <Link to='blog'><button className="btn btn-ghost">Blog</button></Link>
+                   
                 </div>
 
 
