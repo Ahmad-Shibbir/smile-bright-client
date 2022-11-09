@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Services = () => {
     const [Services, setServices] = useState([]);
@@ -25,9 +26,12 @@ const Services = () => {
                                 <div className="card-body">
                                     <h1 className='text-4xl text-sky-200'>${s.price}</h1>
                                     <h2 className="card-title">{s.Services}</h2>
+                                    <h1>{s._id}</h1>
                                     <p>{s.description.slice(0, 200)}</p>
                                     <div className="card-actions justify-end">
-                                        <button className="btn btn-primary">Know More</button>
+                                    <Link to={`/service-details/${s._id}`}>
+                                        <button className="btn btn-primary"> Know More</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>

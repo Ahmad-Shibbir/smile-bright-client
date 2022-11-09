@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelopeOpen } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [Services, setServices] = useState([]);
@@ -23,7 +24,7 @@ const Home = () => {
                 </div>
             </div>
 
-            
+
             <div>
                 <h2 className="footer-title border-b-4 border-indigo-500" ></h2>
                 <h2 className='text-center text-2xl  text-bold '>MY SERVICES</h2>
@@ -40,7 +41,8 @@ const Home = () => {
                                     <h2 className="card-title">{s.Services}</h2>
                                     <p>{s.description.slice(0, 200)}</p>
                                     <div className="card-actions justify-end">
-                                        <button className="btn btn-primary">Know More</button>
+                                        <Link to='/service-details'><button className="btn btn-primary">Know More</button></Link>
+
                                     </div>
                                 </div>
                             </div>
