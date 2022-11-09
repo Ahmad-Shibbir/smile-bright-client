@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import AddService from "../../Pages/AddService/AddService";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
+import PrivateRoute from "../../Pages/Login/PrivateRoute/PrivateRoute";
 import Register from "../../Pages/Login/Register";
 import AddReview from "../../Pages/Review/AddReview";
 import AllReview from "../../Pages/Review/AllReview";
@@ -39,7 +40,7 @@ import Services from "../../Pages/Services/Services";
         },
         {
           path:'/add-service',
-          element:<AddService></AddService>
+          element:<PrivateRoute><AddService></AddService></PrivateRoute>
           // loader: ({params})=> fetch(`http://localhost:5000/all-review/${params.id}`)
         },
 

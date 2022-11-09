@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
 
 const Review = () => {
     const {_id, service} = useLoaderData();
+    const { user } = useContext(AuthContext);
     const handleReview =(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -26,7 +28,7 @@ const Review = () => {
             body:JSON.stringify(review)
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => console.log(data) )
         .catch(er => console.log(er))
 
     }

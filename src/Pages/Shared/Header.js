@@ -33,7 +33,7 @@ const Header = () => {
                 <div>
                     <Link to='/'><button className="btn btn-ghost">Home</button></Link>
                     <Link to='services'><button className="btn btn-ghost">Service</button></Link>
-                    <Link to='services'><button className="btn btn-ghost">Add Service</button></Link>
+                    <Link to='/add-service'><button className="btn btn-ghost">Add Service</button></Link>
                     <Link to='blog'><button className="btn btn-ghost">Blog</button></Link>
          
                 </div>
