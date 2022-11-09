@@ -1,6 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
+import AddService from "../../Pages/AddService/AddService";
 import Home from "../../Pages/Home/Home";
+import Login from "../../Pages/Login/Login";
+import Register from "../../Pages/Login/Register";
 import AddReview from "../../Pages/Review/AddReview";
 import AllReview from "../../Pages/Review/AllReview";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
@@ -34,14 +37,19 @@ import Services from "../../Pages/Services/Services";
           element:<AllReview></AllReview>,
           loader: ({params})=> fetch(`http://localhost:5000/all-review/${params.id}`)
         },
+        {
+          path:'/add-service',
+          element:<AddService></AddService>
+          // loader: ({params})=> fetch(`http://localhost:5000/all-review/${params.id}`)
+        },
 
         {
           path:'/login',
-          element:<h2>Please Login</h2>
+          element:<Login></Login>
         },
         {
           path:'/Register',
-          element: <h2>please register</h2>
+          element: <Register></Register>
         }
       ]
     }
