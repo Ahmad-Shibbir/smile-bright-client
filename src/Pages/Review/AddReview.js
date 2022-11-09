@@ -5,6 +5,8 @@ import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
 const Review = () => {
     const {_id, service} = useLoaderData();
     const { user } = useContext(AuthContext);
+
+    const serviceName = service;
     const handleReview =(e)=>{
         e.preventDefault();
         const form = e.target;
@@ -12,11 +14,15 @@ const Review = () => {
         const url = form.url.value;
         const comment = form.comment.value;
 
-        console.log(name);
+        console.log(serviceName);
 
         const review = {
             serrviceId : _id,
-            customer: name
+            customer: name,
+            email:user.email,
+            photoURL:user?.photoURL,
+            comment
+
             
         }
 

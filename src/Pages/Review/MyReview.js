@@ -1,38 +1,21 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
 
-const ServiceDetails = () => {
-    const { img, service, price, description, _id } = useLoaderData();
-    const { user } = useContext(AuthContext);
-    const [review, setReview] = useState({})
+const MyReview = () => {
+    const { user } = useContext(AuthContext)
+    const [myReview, setmyReview] = useState({})
 
-    console.log(review);
+    console.log(myReview);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/all-review?serrviceId=${_id}`)
+        fetch(`http://localhost:5000/my-review?email=${user.email}`)
             .then(res => res.json())
-            .then(data => setReview(data))
-    }, [_id])
-
+            .then(data => setmyReview(data))
+    }, [user.email])
     return (
         <div>
-            <div className="m-6 card  bg-base-100 shadow-xl">
-                <figure className="px-10 pt-10">
-                    <img src={img} alt="Shoes" className="rounded-xl" />
-                </figure>
-                <div className="card-body items-center text-center">
-                    <h2 className="card-title">{service}</h2>
-                    <h2 className="card-title">${price}</h2>
-                    <p>{description}</p>
-                </div>
-            </div>
-
-
-            {/* <div>
-
             {
-                review.map(r => <div className="overflow-x-auto w-full">
+                myReview.map(r => <div className="overflow-x-auto w-full">
                     <table className="table w-full">
 
                         <tbody>
@@ -46,7 +29,7 @@ const ServiceDetails = () => {
                                             </div>
                                         </div>
                                         <div>
-                                            <div className="font-bold">{r.customer}</div>
+                                            <div className="font-bold">{r.service}</div>
                                         </div>
                                     </div>
                                 </td>
@@ -63,12 +46,9 @@ const ServiceDetails = () => {
                     </table>
                 </div>)
             }
-            </div> */}
-
-
-            <Link to={`/add-review/${_id}`}> <button className="btn btn-secondary">Add Review</button></Link>
+            <h2>my review {myReview.length}</h2>
         </div>
     );
 };
 
-export default ServiceDetails;
+export default MyReview;

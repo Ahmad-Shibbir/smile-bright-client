@@ -7,6 +7,7 @@ import PrivateRoute from "../../Pages/Login/PrivateRoute/PrivateRoute";
 import Register from "../../Pages/Login/Register";
 import AddReview from "../../Pages/Review/AddReview";
 import AllReview from "../../Pages/Review/AllReview";
+import MyReview from "../../Pages/Review/MyReview";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services";
 
@@ -41,6 +42,11 @@ import Services from "../../Pages/Services/Services";
         {
           path:'/add-service',
           element:<PrivateRoute><AddService></AddService></PrivateRoute>
+          // loader: ({params})=> fetch(`http://localhost:5000/all-review/${params.id}`)
+        },
+        {
+          path:'/my-review',
+          element:<PrivateRoute><MyReview></MyReview></PrivateRoute>
           // loader: ({params})=> fetch(`http://localhost:5000/all-review/${params.id}`)
         },
 

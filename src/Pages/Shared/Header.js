@@ -33,9 +33,9 @@ const Header = () => {
                 <div>
                     <Link to='/'><button className="btn btn-ghost">Home</button></Link>
                     <Link to='services'><button className="btn btn-ghost">Service</button></Link>
-                    <Link to='/add-service'><button className="btn btn-ghost">Add Service</button></Link>
+
                     <Link to='blog'><button className="btn btn-ghost">Blog</button></Link>
-         
+
                 </div>
 
 
@@ -46,7 +46,10 @@ const Header = () => {
                         <div className="flex-none gap-2">
 
                             <div className="dropdown dropdown-end">
+                                <Link to='/add-service'><button className="btn btn-ghost">Add Service</button></Link>
+                                <Link to='my-review'><button className="btn btn-ghost">My Review</button></Link>
                                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+
                                     <div className="w-10 rounded-full">
                                         <img src={url} />
                                     </div>
@@ -55,7 +58,7 @@ const Header = () => {
                                     <li>
                                         <a className="justify-between">
                                             {user?.displayName}
-                                            
+
                                         </a>
                                     </li>
 

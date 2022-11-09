@@ -31,7 +31,10 @@ const AddService = () => {
             body: JSON.stringify(service)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                alert("successfully added");
+                form.reset();
+            })
             .catch(er => console.log(er))
 
     }
