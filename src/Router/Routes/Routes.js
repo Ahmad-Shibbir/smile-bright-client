@@ -5,9 +5,10 @@ import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import PrivateRoute from "../../Pages/Login/PrivateRoute/PrivateRoute";
 import Register from "../../Pages/Login/Register";
-import AddReview from "../../Pages/Review/AddReview";
+
 import AllReview from "../../Pages/Review/AllReview";
 import MyReview from "../../Pages/Review/MyReview";
+import ReviewAdd from "../../Pages/Review/ReviewAdd";
 import ServiceDetails from "../../Pages/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services";
 
@@ -30,9 +31,10 @@ import Services from "../../Pages/Services/Services";
           loader: ({params})=> fetch(`http://localhost:5000/service-details/${params.id}`)
         },
         {
-          path:'/add-review/:id',
-          element:<AddReview></AddReview>,
-          loader: ({params})=> fetch(`http://localhost:5000/add-review/${params.id}`)
+          path:'/review-add/:id',
+          element:<ReviewAdd></ReviewAdd>,
+          loader: ({params})=> fetch(`http://localhost:5000/service-details/${params.id}`)
+          
         },
         {
           path:'/all-review/:id',

@@ -5,12 +5,12 @@ import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
 const ServiceDetails = () => {
     const { img, service, price, description, _id } = useLoaderData();
     const { user } = useContext(AuthContext);
-    const [review, setReview] = useState({})
+    const [review, setReview] = useState([])
 
-    console.log(review);
+    console.log(review,_id);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/all-review?serrviceId=${_id}`)
+        fetch(`http://localhost:5000/review-add?serrviceId=${_id}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [_id])
@@ -29,7 +29,7 @@ const ServiceDetails = () => {
             </div>
 
 
-            {/* <div>
+            <div>
 
             {
                 review.map(r => <div className="overflow-x-auto w-full">
@@ -63,10 +63,11 @@ const ServiceDetails = () => {
                     </table>
                 </div>)
             }
-            </div> */}
+            </div>
 
 
-            <Link to={`/add-review/${_id}`}> <button className="btn btn-secondary">Add Review</button></Link>
+            <Link to={`/review-add/${_id}`}> <button className="btn btn-secondary">Add Review</button></Link>
+            <h2>{review.length}</h2>
         </div>
     );
 };
