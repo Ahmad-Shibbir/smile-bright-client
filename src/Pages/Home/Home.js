@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaPhoneAlt, FaMapMarkerAlt, FaEnvelopeOpen } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { FaSlackHash } from 'react-icons/fa';
 
 const Home = () => {
     const [Services, setServices] = useState([]);
@@ -36,20 +37,24 @@ const Home = () => {
                     {
                         Services.map(s =>
                             <div className="card w-96 glass">
-                                <figure><img src={s.img} alt="car!" /></figure>
-                                <div className="card-body">
-                                    <h2 className="card-title">{s.Services}</h2>
-                                    <p>{s.description.slice(0, 200)}</p>
+                            <figure><img src={s.img} alt="car!" /></figure>
+                            <div className="card-body">
+                                    
+                                    <h2 className="card-title text-2xl">{s.service}</h2>
+                                    <h1 className='text-4xl '>${s.price}</h1>
+                                    
+                                    <p>{s.description.slice(0, 100)}</p>
                                     <div className="card-actions justify-end">
-                                        <Link to='/service-details'><button className="btn btn-primary">Know More</button></Link>
-
+                                    <Link to={`/service-details/${s._id}`}>
+                                        <button className="btn btn-primary"> Know More</button>
+                                        </Link>
                                     </div>
                                 </div>
-                            </div>
+                        </div>
                         )
                     }
                 </div>
-                <button className=" btn btn-primary">SEE ALL</button>
+                <Link to='services'><button className=" btn btn-primary">SEE ALL</button></Link>
                 <h2 className="footer-title border-b-4 border-indigo-500" ></h2>
             </div>
 
@@ -69,6 +74,28 @@ const Home = () => {
                     <span className="footer-title">dr.ratul@gmail.com</span>
                 </div>
             </footer>
+
+
+            <div className="hero min-h-screen 	neutral">
+            
+                <div className="hero-content text-center">
+                    <div className="max-w-md">
+                    <h2 className="footer-title border-b-4 border-indigo-500" ></h2>
+                        <h1 className="text-5xl font-bold">Visit ME!!</h1>
+                        <ul className="steps steps-vertical mb-6">
+                          
+                          <li className=" m-8 text-2xl font-bold grid grid-cols-2"> <FaSlackHash></FaSlackHash>
+                          Comfortable Office</li>
+                          <li className=" m-8 text-2xl font-bold grid grid-cols-2"> <FaSlackHash></FaSlackHash>
+                           Friendly & Advanced Treatment</li>
+                           <li className=" m-8 text-2xl font-bold grid grid-cols-2"> <FaSlackHash></FaSlackHash>
+                           High Quality Equipment</li>
+                        </ul>
+                        <h2 className="footer-title border-b-4 border-indigo-500" ></h2>
+                    </div>
+                </div>
+                
+            </div>
 
 
         </div>

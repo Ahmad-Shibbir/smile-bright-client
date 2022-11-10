@@ -24,10 +24,11 @@ const Services = () => {
                             <div className="card w-96 glass">
                                 <figure><img src={s.img} alt="car!" /></figure>
                                 <div className="card-body">
-                                    <h1 className='text-4xl text-sky-200'>${s.price}</h1>
-                                    <h2 className="card-title">{s.Services}</h2>
-                                    <h1>{s._id}</h1>
-                                    <p>{s.description.slice(0, 200)}</p>
+                                    
+                                    <h2 className="card-title text-2xl">{s.service}</h2>
+                                    <h1 className='text-4xl '>${s.price}</h1>
+                                    
+                                    <p>{s.description.slice(0, 100)}</p>
                                     <div className="card-actions justify-end">
                                     <Link to={`/service-details/${s._id}`}>
                                         <button className="btn btn-primary"> Know More</button>
@@ -38,7 +39,7 @@ const Services = () => {
                         )
                     }
                 </div>
-                <button className=" btn btn-primary">SEE ALL</button>
+                
                 <h2 className="footer-title border-b-4 border-indigo-500" ></h2>
             </div>
         </div>
