@@ -34,18 +34,18 @@ import Services from "../../Pages/Services/Services";
         {
           path:'/service-details/:id',
           element:<ServiceDetails></ServiceDetails>,
-          loader: ({params})=> fetch(`http://localhost:5000/service-details/${params.id}`)
+          loader: ({params})=> fetch(`https://smile-bright-server.vercel.app/service-details/${params.id}`)
         },
         {
           path:'/review-add/:id',
           element:<PrivateRoute><ReviewAdd></ReviewAdd></PrivateRoute>,
-          loader: ({params})=> fetch(`http://localhost:5000/service-details/${params.id}`)
+          loader: ({params})=> fetch(`https://smile-bright-server.vercel.app/service-details/${params.id}`)
           
         },
         {
           path:'/all-review/:id',
           element:<AllReview></AllReview>,
-          loader: ({params})=> fetch(`http://localhost:5000/all-review/${params.id}`)
+          loader: ({params})=> fetch(`https://smile-bright-server.vercel.app/all-review/${params.id}`)
         },
         {
           path:'/add-service',

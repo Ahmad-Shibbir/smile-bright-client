@@ -29,7 +29,7 @@ const ReviewAdd = () => {
 
         }
 
-        fetch('http://localhost:5000/add-review', {
+        fetch('https://smile-bright-server.vercel.app/add-review', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

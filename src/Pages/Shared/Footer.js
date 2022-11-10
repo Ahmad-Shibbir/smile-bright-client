@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -6,10 +7,13 @@ const Footer = () => {
             <footer className="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <span className="footer-title border-b-4 border-indigo-500">Services</span>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <Link className="link link-hover font-bold ">Tooth Pain</Link>
+                    <Link className="link link-hover font-bold ">Uneven Teeth</Link>
+                    <Link className="link link-hover font-bold ">Cavities & Decay</Link>
+                    <Link className="link link-hover font-bold ">Missing Teeth</Link>
+                    <Link className="link link-hover font-bold ">Tooth Stains</Link>
+                    <Link className="link link-hover font-bold ">General Dental CareF</Link>
+                   
                 </div>
                 <div>
                     <span className="footer-title border-b-4 border-indigo-500">Operation Houre</span>

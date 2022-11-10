@@ -7,7 +7,7 @@ const Home = () => {
     const [Services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/home')
+        fetch('https://smile-bright-server.vercel.app/home')
             .then(res => res.json())
             .then(data => setServices(data))
     })
@@ -36,7 +36,7 @@ const Home = () => {
                 <div className='grid grid-cols-3'>
                     {
                         Services.map(s =>
-                            <div className="card w-96 glass">
+                            <div className="card w-80 glass">
                             <figure><img src={s.img} alt="car!" /></figure>
                             <div className="card-body">
                                     

@@ -10,7 +10,7 @@ const ServiceDetails = () => {
     console.log(review,_id);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/review-add?serrviceId=${_id}`)
+        fetch(`https://smile-bright-server.vercel.app/review-add?serrviceId=${_id}`)
             .then(res => res.json())
             .then(data => setReview(data))
     }, [_id])

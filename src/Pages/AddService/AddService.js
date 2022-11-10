@@ -23,7 +23,7 @@ const AddService = () => {
             
         }
 
-        fetch('http://localhost:5000/add-service', {
+        fetch('https://smile-bright-server.vercel.app/add-service', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

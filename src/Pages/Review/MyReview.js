@@ -8,7 +8,7 @@ const MyReview = () => {
     console.log(myReview);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my-review?email=${user.email}`)
+        fetch(`https://smile-bright-server.vercel.app/my-review?email=${user.email}`)
             .then(res => res.json())
             .then(data => setmyReview(data))
     }, [user?.email])
@@ -16,7 +16,7 @@ const MyReview = () => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you Sure that you want to delete?');
         if (proceed) {
-            fetch(`http://localhost:5000/my-review/${id}`, {
+            fetch(`https://smile-bright-server.vercel.app/my-review/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())
@@ -54,7 +54,7 @@ const MyReview = () => {
         
        
         console.log(idd);
-        fetch(`http://localhost:5000/my-review/${idd}`, {
+        fetch(`https://smile-bright-server.vercel.app/my-review/${idd}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
