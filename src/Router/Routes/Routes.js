@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import AddService from "../../Pages/AddService/AddService";
+import ErrorPage from "../../Pages/ErroPage/ErrorPage";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import PrivateRoute from "../../Pages/Login/PrivateRoute/PrivateRoute";
@@ -60,7 +61,12 @@ import Services from "../../Pages/Services/Services";
           path:'/Register',
           element: <Register></Register>
         }
-      ]
+      ],
+      
+      
+    },{
+      path:'*',
+      element:<ErrorPage></ErrorPage>
     }
   ])
 
