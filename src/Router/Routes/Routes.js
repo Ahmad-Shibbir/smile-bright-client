@@ -38,7 +38,7 @@ import Services from "../../Pages/Services/Services";
         },
         {
           path:'/review-add/:id',
-          element:<ReviewAdd></ReviewAdd>,
+          element:<PrivateRoute><ReviewAdd></ReviewAdd></PrivateRoute>,
           loader: ({params})=> fetch(`http://localhost:5000/service-details/${params.id}`)
           
         },

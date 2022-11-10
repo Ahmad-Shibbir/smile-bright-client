@@ -3,7 +3,7 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../../Contex/AuthProvider/AuthProvider';
 const ReviewAdd = () => {
-    const { _id, service } = useLoaderData();
+    const { _id, service,img } = useLoaderData();
     const { user } = useContext(AuthContext);
     console.log(service, _id);
     const serviceName = service;
@@ -22,6 +22,7 @@ const ReviewAdd = () => {
             customer: name,
             email: user.email,
             photoURL: user?.photoURL,
+            imgUrl:img,
             comment,
             service
 

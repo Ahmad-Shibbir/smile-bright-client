@@ -85,7 +85,7 @@ const MyReview = () => {
                                         <div className="avatar">
                                             <div className="mask mask-squircle w-12 h-12">
                                                 <img src={
-                                                    r?.photoURL} alt="Avatar Tailwind CSS Component" />
+                                                    r?.imgUrl} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
                                         <div>
@@ -131,7 +131,7 @@ const MyReview = () => {
                     </table>
                 </div>)
             }
-            <h2>my review {myReview.length}</h2>
+            
         </div>
     );
 };

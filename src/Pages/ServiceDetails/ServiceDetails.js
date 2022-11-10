@@ -54,10 +54,7 @@ const ServiceDetails = () => {
                                     {r.comment}
                                     <br />
                                 </td>
-                                <td>Purple</td>
-                                <th>
-                                    <button className="btn btn-ghost btn-xs">details</button>
-                                </th>
+                               
                             </tr>
                         </tbody>
                     </table>
@@ -67,7 +64,7 @@ const ServiceDetails = () => {
 
 
             <Link to={`/review-add/${_id}`}> <button className="btn btn-secondary">Add Review</button></Link>
-            <h2>{review.length}</h2>
+            
         </div>
     );
 };
